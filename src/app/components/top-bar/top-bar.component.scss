@@ -1,0 +1,47 @@
+.toolBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 63px;
+    font-family: 'Source Sans Pro', sans-serif;
+    background: #FFFFFF;
+    box-shadow: 0px 5.69014px 5.69014px rgba(0, 0, 0, 0.05); 
+    .logo{
+        margin-left: 43px;
+        img{
+            width: 109.64px;
+        }
+    }
+    .header{
+        font-style: normal;
+        font-weight: 900;
+        font-size: 22px;
+        line-height: 25px;
+        text-align: center;
+        color: #003B60;
+    }
+    .icons{
+      display: flex;
+      margin-right: 60px;
+      width: 170px;
+      justify-content: space-between;
+      .material-symbols-outlined {
+        border-radius: 1px;
+        font-size: 27.83px;
+       }
+      .starCount{
+        .count{
+            top: 20px;
+        }
+        display: flex;
+        .bell{
+        //     font-style: #003B60; 
+        }
+        color: #FFB636;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 28px;
+      }
+    }
+}

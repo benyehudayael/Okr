@@ -1,13 +1,8 @@
-// :host {
-//   background-color: aliceblue;  
-//   .item {
-//     background-color: aqua;
-//     &-title {
-//         &:hover {
-//             font-weight: ;
-//         }
-
-//     }
-
-//   }
-// }
+ :host {
+    display: flex;
+    flex-direction: column;
+    width: 1920px;
+    height: 1510px;
+    background: #F1F4F7;
+    font-family: "Source Sans Pro", sans-serif;
+ }

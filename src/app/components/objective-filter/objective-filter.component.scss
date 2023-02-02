@@ -1,0 +1,52 @@
+.filterBar{
+    display: flex;
+    margin-left: 133px;
+    margin-top: 23px;
+  .filter{
+    background: #FFFFFF;
+    box-shadow: 0px 0px 12px rgba(25, 16, 62, 0.12);
+    border-radius: 4px;
+    padding: 12px 17px 12px 17px;
+    margin-left: 31px;
+    width: 346px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    position: relative;
+    .material-symbols-outlined{
+       position: absolute;
+       right: 20px;
+       font-size: 38px;
+       top: 18px;
+       transform: matrix(-1, 0, 0, 1, 0, 0);
+       color: #FFB636;
+    }
+    p{
+       font-weight: 900;
+       font-size: 14px;
+       margin: unset;
+       line-height: 16px;
+       display: flex;
+       align-items: center;
+       color: #585961;
+    }
+    div{
+        font-weight: bold;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        color: #003B60;
+    }
+
+  }
+  .addObjective{
+    height: 75px;
+    margin-left: 740px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 168px;
+    font-weight: 900;
+    font-size: 24px;
+    color: #FFB636;
+  }
+}
