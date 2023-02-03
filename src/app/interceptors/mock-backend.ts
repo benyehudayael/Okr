@@ -1,8 +1,10 @@
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpResponse } from "@angular/common/http";
 import { Injectable, Injector } from "@angular/core";
 import { Observable, of } from "rxjs";
+import { DateRange } from "../model/dateRange";
 import { Objective } from "../model/objective";
 import { Person } from "../model/person";
+import { Privacy } from "../model/privacy";
 
 var persons: Person[] =
     [
@@ -13,7 +15,9 @@ var persons: Person[] =
         new Person('Isabella Forest', 'https://t4.ftcdn.net/jpg/02/24/86/95/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg', 'Department', 'position'),
         new Person('Lucas Greenfield', 'https://st4.depositphotos.com/2760050/24301/i/600/depositphotos_243011410-stock-photo-man-with-bristle-on-calm.jpg', 'Department', 'position')
     ];
-var objectives: Objective[] = [];
+var objectives: Objective[] = [
+    new Objective('ghytuy', new DateRange(new Date(2022, 11, 31), new Date(2022, 11, 31)), persons[0], Privacy.Personal)
+];
 
 @Injectable()
 export class BackendInterceptor implements HttpInterceptor {

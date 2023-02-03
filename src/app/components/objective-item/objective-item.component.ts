@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Objective } from 'src/app/model/objective';
 
 @Component({
   selector: 'app-objective-item',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ObjectiveItemComponent implements OnInit {
 
-  constructor() { }
+  @Input() objective!: Objective;
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

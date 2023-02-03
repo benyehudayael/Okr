@@ -4,9 +4,9 @@ import { Privacy } from "./privacy";
 
 export class Objective {
     constructor(
-        public description: string, 
+        public description: string,
         public dateRange: DateRange,
-        public assignee: Person,
+        public assignie: Person,
         public privacy: Privacy
-    ){}
+    ) { }
 }

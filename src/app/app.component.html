@@ -1,4 +1,6 @@
 <div>
     <app-top-bar></app-top-bar>
     <app-objective-filter></app-objective-filter>
+    <app-objective-item *ngFor="let objective of objectives" [objective]="objective"></app-objective-item>
+    <app-new-objective-form></app-new-objective-form>
 </div>

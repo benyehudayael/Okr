@@ -1,1 +1,40 @@
-<p>objective-item works!</p>
+<div class="objective">
+    <div class="iconDrop">
+        <span class="material-symbols-outlined">keyboard_arrow_down</span>
+    </div>
+    <div class="main">
+        <div class="props">
+            <div class="prop">
+                <div>Objective</div>
+                <div>{{objective.description}}</div>
+            </div>
+            <div class="prop">
+                <div>0%</div>
+                <div></div>
+            </div>
+            <div class="prop">
+                <div>Start</div>
+                <div>{{objective.dateRange.startDate | date}} - {{objective.dateRange.endDate | date}}</div>
+            </div>
+            <div class="prop">
+                <div>Assigniee</div>
+                <div><img src={{objective.assignie.image}} alt=""></div>
+            </div>
+            <div class="prop">
+                <div>Privacy</div>
+                <div>{{objective.privacy}}</div>
+            </div>
+            <div class="prop">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+        <div class="addKey">
+            <div class="addKeyBtn">
+                <span class="material-symbols-outlined">add_circle</span>
+                <p>Add key result</p>
+            </div>
+        </div>
+    </div>
+</div>

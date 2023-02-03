@@ -7,7 +7,7 @@ import { MainComponent } from './components/main/main.component';
 import { ObjectiveFilterComponent } from './components/objective-filter/objective-filter.component';
 import { ObjectiveItemComponent } from './components/objective-item/objective-item.component';
 import { NewObjectiveFormComponent } from './components/new-objective-form/new-objective-form.component';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BackendInterceptor } from './interceptors/mock-backend';
 
 @NgModule({
@@ -20,7 +20,8 @@ import { BackendInterceptor } from './interceptors/mock-backend';
     NewObjectiveFormComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [
     {

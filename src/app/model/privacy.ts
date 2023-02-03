@@ -1,6 +1,6 @@
 export enum Privacy {
-    Department = 1,
-    OnlyDierectManagement,
-    EntireCompany,
-    Personal,
-  }
+  Department = 1,
+  OnlyDierectManagement,
+  EntireCompany,
+  Personal,
+}
