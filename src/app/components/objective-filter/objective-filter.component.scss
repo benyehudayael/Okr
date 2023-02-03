@@ -21,7 +21,6 @@
        color: #FFB636;
     }
     p{
-       font-weight: 900;
        font-size: 14px;
        margin: unset;
        line-height: 16px;
@@ -30,13 +29,11 @@
        color: #585961;
     }
     div{
-        font-weight: bold;
         font-size: 24px;
         display: flex;
         align-items: center;
         color: #003B60;
     }
-
   }
   .addObjective{
     height: 75px;
@@ -45,27 +42,8 @@
     align-items: center;
     justify-content: space-between;
     width: 168px;
-    font-weight: 900;
     font-size: 24px;
     color: #FFB636;
+    cursor: pointer;
   }
 }
-.fade {
-  opacity: 0;
-  transition: opacity .15s linear;
-}
-.modal-backdrop.show {
-  opacity: .5;
-}
-.modal-backdrop.fade {
-  opacity: 0;
-}
-.fade.show {
-  opacity: 1;
-}
-.my-modal{
-  display: block;
-  background: rgba(0, 0, 0, 0.5);
-  height: 100vh;
-  width: 0;
-} 
