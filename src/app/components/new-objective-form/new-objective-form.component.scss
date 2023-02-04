@@ -1,7 +1,19 @@
 .form{
   .inputs{
-    div{
-        
+    .blueAndBold{
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 16px;
+      color: #003B60;
+      margin-bottom: 4px;
+    }
+    .blue{
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 21px;
+      color: #003B60;
     }
     .description{
         width: 505px;
@@ -12,6 +24,11 @@
         padding: 7px 0;
     }
     .picker{
+      &-input{
+        height: 122px
+        ;
+
+      }
       background: #FFFFFF;
       box-shadow: 0px 0px 12px rgba(25, 16, 62, 0.12);
       border-radius: 4px;
