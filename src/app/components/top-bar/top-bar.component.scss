@@ -32,13 +32,24 @@
             top: 20px;
         }
         display: flex;
-        .bell{
-        //     font-style: #003B60; 
-        }
         color: #FFB636;
         font-style: normal;
         font-size: 24px;
         line-height: 28px;
       }
+      .bell{
+        //     font-style: #003B60; 
+      }
     }
+}
+@media only screen and (max-width: 600px) {
+  .graph, .star, .starCount, .count , .header{
+    display: none;
+  }
+  .logo{
+    margin-left: 37% !important;
+  }
+  .icons{
+    margin-right: 20px;
+  }
 }

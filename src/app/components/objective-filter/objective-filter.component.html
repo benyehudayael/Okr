@@ -1,16 +1,32 @@
 <div class="filterBar">
-    <div class="filter">
-        <p>Department</p>
-        <div>Finance</div>
-        <span class="material-symbols-outlined">arrow_drop_down</span>
+    <div class="filters">
+        <span class="material-symbols-outlined" (click)="reloadObjectives()">expand_circle_down</span>
+        <div class="filter">
+            <div class="col">
+                <div ngbDropdown class="d-inline-block">
+                    <button type="button" class="btn btn-outline-primary" ngbDropdownToggle>
+                        <p>Department</p><br>
+                        <div class="departmentChoose">{{selectedDepartment?.title ?? "Department"}}</div>
+                        <span class="material-symbols-outlined">arrow_drop_down</span>
+                    </button>
+                    <div ngbDropdownMenu class="hide" style="width: 100%;">
+                        <button ngbDropdownItem *ngFor="let dep of departments" (click)="setDepartment(dep)">
+                            <span class="pad">{{dep.title}}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="filter">
+            <p>Earliest start date</p>
+            <div class="input-group">
+                <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="date" ngbDatepicker
+                    #d="ngbDatepicker" />
+                <button class="btn btn-outline-secondary bi bi-calendar3" (click)="d.toggle()" type="button"></button>
+            </div>
+        </div>
+        <div class="addObjective" (click)="openDialog()">
+            <img src="../../../assets/Add Circle.png" alt="">
+            <span>Add Objective</span>
+        </div>
     </div>
-    <div class="filter">
-        <p>Earliest start date</p>
-        <div>01/01/2021</div>
-        <span class="material-symbols-outlined">arrow_drop_down</span>
-    </div>
-    <div class="addObjective" (click)="openDialog()">
-        <span class="material-symbols-outlined">add_circle</span>
-        <span>Add Objective</span>
-    </div>
-</div>

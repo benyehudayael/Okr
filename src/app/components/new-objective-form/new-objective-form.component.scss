@@ -1,3 +1,4 @@
+@import '../colors.scss';
 .form{
   .inputs{
     .blueAndBold{
@@ -16,24 +17,59 @@
       color: #003B60;
     }
     .description{
-        width: 505px;
+        width: 100%;
         border: 0;
         outline: 0;
-        //font-size: 1.3rem;
-        //color: $white;
-        padding: 7px 0;
+        box-sizing: border-box;
+        resize: none;
     }
     .picker{
-      &-input{
-        height: 122px
-        ;
-
-      }
+      padding: 16px;
       background: #FFFFFF;
       box-shadow: 0px 0px 12px rgba(25, 16, 62, 0.12);
       border-radius: 4px;
-      width: 505px;
+      width: 100%;
       height: 64px;
+      margin-bottom: 15px;  
+      position: relative;
+      &.date > .dp-hidden { top: 50px }
+      &-input{
+        height: 122px;
+        margin-top: 10px;
+      }
+      .d-inline-block{
+        width: 100%;
+        height: 100%;
+      }
+      .btn{
+        border: unset;
+        width: 100%;
+        height: 100%;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        color: #585961;
+        justify-content: space-between;
+        .material-symbols-outlined{
+          color: $orange;
+        }
+      }
+      .btn:hover {
+        background-color: transparent;
+        border-color: transparent;
+      }
+      .dropdown-toggle::after {
+        display: inline-block;
+        margin-left: 0.255em;
+        vertical-align: 0.255em;
+        content: none;
+        border-top: 0.3em solid;
+        border-right: 0.3em solid transparent;
+        border-bottom: 0;
+        border-left: 0.3em solid transparent;
+      }
     }
   }
 }

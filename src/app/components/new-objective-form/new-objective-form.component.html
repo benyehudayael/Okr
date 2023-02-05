@@ -2,10 +2,68 @@
     <div class="inputs">
         <div class="blueAndBold">Objective</div>
         <div class="blue">Add the objecvtive you would like to achive</div>
-        <div class="picker-input"><textarea class="description" type="text" formControlName="description"></textarea>
+        <div class="picker picker-input">
+            <textarea class="description" rows="3" type="text" placeholder="Type here"
+                [(ngModel)]="newObjective.description"></textarea>
         </div>
-        <div class="picker date"></div>
-        <div class="picker assignie"></div>
-        <div class="picker privacy"></div>
+        <div class="picker date">
+            <div class="dp-hidden position-absolute">
+                <div class="input-group">
+                    <input name="datepicker" class="form-control" ngbDatepicker #datepicker="ngbDatepicker"
+                        [autoClose]="'outside'" navigation="arrows" (dateSelect)="onDateSelection($event)"
+                        [displayMonths]="2" [dayTemplate]="t" outsideDays="hidden" [startDate]="fromDate!" tabindex="-1"
+                        style="display: none;" />
+                    <ng-template #t let-date let-focused="focused">
+                        <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
+                            [class.faded]="isHovered(date) || isInside(date)" (mouseenter)="hoveredDate = date"
+                            (mouseleave)="hoveredDate = null">
+                            {{ date.day }}
+                        </span>
+                    </ng-template>
+                </div>
+            </div>
+            <div class="drp" (click)="datepicker.toggle()">
+                <label>Target Date</label>
+                <label class="val">{{formatter.format(fromDate) + ' - ' + formatter.format(toDate)}}</label>
+                <div class="input-group hide">
+                    <input #dpFromDate placeholder="dd/mm/yyyy-dd/mm/yyyy" name="dpFromDate"
+                        [value]="formatter.format(fromDate) + ' - ' + formatter.format(toDate)"
+                        (input)="fromDate = validateInput(fromDate, dpFromDate.value)" />
+                    <i>*</i><!--check this!-->
+                </div>
+            </div>
+        </div>
+        <div class="picker">
+            <div class="col">
+                <div ngbDropdown class="d-inline-block" container="body">
+                    <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+                        {{newObjective.assignee?.fullName ?? "Assignee"}}
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                    <div ngbDropdownMenu class="assignee">
+                        <button ngbDropdownItem *ngFor="let assignee of assignees" (click)="setAssignee(assignee)">
+                            <img src={{assignee.image}} alt="">
+                            <span class="borderRight pad">{{assignee.fullName}}</span>
+                            <span class="borderRight pad">{{departmentLookup[assignee.departmentId.toString()]}}</span>
+                            <span class="pad">{{assignee.position}}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="picker privacy">
+            <div class="col">
+                <div ngbDropdown class="d-inline-block" container="body">
+                    <button type="button" class="btn btn-outline-primary" ngbDropdownToggle>{{privacyTitle}}
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button ngbDropdownItem *ngFor="let privacy of privacies" (click)="setPrivacy(privacy)">
+                            <span class="pad">{{privacy}}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

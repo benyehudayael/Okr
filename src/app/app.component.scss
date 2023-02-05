@@ -20,6 +20,9 @@
       border-radius: 10px;
       z-index: 101;
       width: 569px;
+      height: auto;
+      left: 50%;
+      transform: translateX(-50%);
       &-backdrop {
         display: none;
         position: fixed;
@@ -48,7 +51,18 @@
         line-height: 30px;
         align-items: center;
         color: #003B60;
-        span { margin: auto; }
+        .material-symbols-outlined{
+          color: $orange;
+          cursor: pointer;
+          display: none;   
+          position: absolute;
+          font-size: 32px;
+          left: 87.73%;
+          right: 8%;
+          top: 4.98%;
+          bottom: 92.06%;
+        }
+        .newHeader { margin: auto; }
       }
       &-body {
         padding: 30px;
@@ -66,14 +80,55 @@
             border-radius: 4px;
             width: 170px;
             height: 42px;
+            padding: 4px;
+            cursor: pointer;
         }
         .cancel{
            color: #FFB636;
+           font-weight: 700;
         }
         .create{
-           margin: 2px;
-           background: linear-gradient(87.05deg, #FFB636 -9.68%, #FF0092 136.5%);
+          padding: 2px;
+          color: #FFFFFF;
+          background: linear-gradient(87.05deg, #FFB636 -9.68%, #FF0092 136.5%);
+        }
+        .bg{
+          background: linear-gradient(87.05deg, #FFB636 -9.68%, #FF0092 136.5%);
+          border-radius: 4px;
+          border: 2px solid white;
+          height: 100%;
+          width: 100%;
         }
       }
     } 
  }
+ @media only screen and (max-width: 600px) {
+  .modal{
+    margin-top: 0px !important; 
+    border-radius: unset !important; 
+    width: 100% !important;
+    height: 100% !important;
+    &-header{
+      .material-symbols-outlined{
+        display: inline-block  !important;
+      }
+    }
+    &-body {
+      height: calc(100% - 230px) !important;
+    }  
+    .cancel{
+      display: none;
+    }
+  }
+}
+
+.items-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  gap: 10px;
+  app-objective-item {
+    width: 78%;
+    margin: auto;
+  }
+}

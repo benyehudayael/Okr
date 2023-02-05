@@ -1,16 +1,24 @@
 <div class="main">
     <app-top-bar></app-top-bar>
-    <app-objective-filter (onShowAddObjectiveDialog)="openDialog()"></app-objective-filter>
-    <app-objective-item *ngFor="let objective of objectives" [objective]="objective"></app-objective-item>
+    <app-objective-filter (onShowAddObjectiveDialog)="openDialog()"
+        (onFilterChanged)="reloadObjectives($event)"></app-objective-filter>
+    <div class="items-container">
+        <app-objective-item *ngFor="let objective of objectives$ | async" [objective]="objective"></app-objective-item>
+    </div>
 </div>
 <div class="modal-backdrop" #modalBackdrop></div>
 <div class="modal" tabindex="-1" role="dialog" #myModal>
-    <div class="modal-header"><span>New Objective</span></div>
+    <div class="modal-header">
+        <span class="newHeader">New Objective</span>
+        <span class="material-symbols-outlined" (click)="closeDialog()">close</span>
+    </div>
     <div class="modal-body">
-        <app-new-objective-form></app-new-objective-form>
+        <app-new-objective-form [newObjective]="newObjective"></app-new-objective-form>
     </div>
     <div class="modal-footer">
         <div class="cancel" (click)="closeDialog()">Cancel</div>
-        <div class="create" (click)="createObjective()">Create</div>
+        <div class="create" (click)="createObjective()">
+            <div class="bg">Create</div>
+        </div>
     </div>
 </div>

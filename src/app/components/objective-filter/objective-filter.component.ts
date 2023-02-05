@@ -1,4 +1,7 @@
 import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { NgbDate, NgbCalendar, NgbDateParserFormatter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { Department } from 'src/app/model/department';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-objective-filter',
@@ -8,23 +11,31 @@ import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '
 export class ObjectiveFilterComponent implements OnInit {
 
   @Output() onShowAddObjectiveDialog: EventEmitter<any> = new EventEmitter();
-  constructor() { }
+  @Output() onFilterChanged: EventEmitter<any> = new EventEmitter();
+
+  departments: Department[] = [];
+  monthYear: { year: number; month: number };
+  date: NgbDateStruct;
+  selectedDepartment?: Department;
+
+  constructor(private calendar: NgbCalendar, public formatter: NgbDateParserFormatter, private dataService: DataService) {
+    this.date = calendar.getToday();
+  }
 
   ngOnInit(): void {
+    this.dataService.getDepartments()
+      .subscribe(departments => { this.departments = departments });;
   }
-  // @ViewChild('myModal', { static: false })
-  // myModal!: ElementRef;
-  // elm!: HTMLElement;
-  // ngAfterViewInit(): void {
-  //   this.elm = this.myModal.nativeElement as HTMLElement;
-  // }
-  // closeDialog(): void {
-  //   this.elm.classList.remove('show');
-  //   setTimeout(() => {
-  //     this.elm.style.width = '0';
-  //   }, 75);
-  // }
+
   openDialog(): void {
     this.onShowAddObjectiveDialog.emit();
+  }
+
+  setDepartment(dep: Department): void {
+    this.selectedDepartment = dep;
+  }
+
+  reloadObjectives(): void {
+    this.onFilterChanged.emit({ date: this.date, departmentId: this.selectedDepartment.id });
   }
 }

@@ -4,27 +4,29 @@
     </div>
     <div class="main">
         <div class="props">
-            <div class="prop">
-                <div>Objective</div>
-                <div>{{objective.description}}</div>
+            <div class="prop obj">
+                <div class="blueHeader">Objective</div>
+                <div class="blueContent">{{objective.description}}</div>
             </div>
-            <div class="prop">
+            <div class="prop grayBorder">
                 <div>0%</div>
-                <div></div>
+                <div>
+                    <p><ngb-progressbar type="secondary" [value]="25"></ngb-progressbar></p>
+                </div>
             </div>
-            <div class="prop">
-                <div>Start</div>
+            <div class="prop grayBorder">
+                <div class="grayContent">Start</div>
                 <div>{{objective.dateRange.startDate | date}} - {{objective.dateRange.endDate | date}}</div>
             </div>
             <div class="prop">
-                <div>Assigniee</div>
-                <div><img src={{objective.assignie.image}} alt=""></div>
+                <div class="grayContent">Assigneee</div>
+                <div><img src={{objective.assignee.image}} alt=""></div>
             </div>
-            <div class="prop">
-                <div>Privacy</div>
+            <div class="prop hideOnSmallScreen">
+                <div class="grayContent">Privacy</div>
                 <div>{{objective.privacy}}</div>
             </div>
-            <div class="prop">
+            <div class="prop hideOnSmallScreen">
                 <div class="dot"></div>
                 <div class="dot"></div>
                 <div class="dot"></div>
@@ -32,8 +34,8 @@
         </div>
         <div class="addKey">
             <div class="addKeyBtn">
-                <span class="material-symbols-outlined">add_circle</span>
-                <p>Add key result</p>
+                <img src="../../../assets/Add Circle.png" alt="">
+                <span>Add key result</span>
             </div>
         </div>
     </div>
