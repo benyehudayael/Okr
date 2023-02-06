@@ -2,27 +2,32 @@
     <div class="filters">
         <span class="material-symbols-outlined" (click)="reloadObjectives()">expand_circle_down</span>
         <div class="filter">
-            <div class="col">
-                <div ngbDropdown class="d-inline-block">
-                    <button type="button" class="btn btn-outline-primary" ngbDropdownToggle>
-                        <p>Department</p><br>
-                        <div class="departmentChoose">{{selectedDepartment?.title ?? "Department"}}</div>
-                        <span class="material-symbols-outlined">arrow_drop_down</span>
-                    </button>
-                    <div ngbDropdownMenu class="hide" style="width: 100%;">
-                        <button ngbDropdownItem *ngFor="let dep of departments" (click)="setDepartment(dep)">
-                            <span class="pad">{{dep.title}}</span>
-                        </button>
+            <div ngbDropdown class="d-inline-block">
+                <button type="button" class="btn btn-outline-primary" ngbDropdownToggle>
+                    <div class="labels">
+                        <label>Department</label>
+                        <span>{{selectedDepartment?.title ?? "Department"}}</span>
                     </div>
+                    <span class="material-symbols-outlined">arrow_drop_down</span>
+                </button>
+                <div ngbDropdownMenu class="hide" style="width: 100%;">
+                    <button ngbDropdownItem *ngFor="let dep of departments" (click)="setDepartment(dep)">
+                        <span class="pad">{{dep.title}}</span>
+                    </button>
                 </div>
             </div>
         </div>
-        <div class="filter">
-            <p>Earliest start date</p>
-            <div class="input-group">
-                <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="date" ngbDatepicker
-                    #d="ngbDatepicker" />
-                <button class="btn btn-outline-secondary bi bi-calendar3" (click)="d.toggle()" type="button"></button>
+        <div class="filter date" (click)="datepicker.toggle()">
+            <div class="labels">
+                <label>Earliest start date</label>
+                <span>{{date.day + '/' + date.month + '/' + date.year}}</span>
+            </div>
+            <span class="material-symbols-outlined">arrow_drop_down</span>
+            <div class="dp-hidden position-absolute">
+                <div class="input-group">
+                    <input name="datepicker" class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="date"
+                        ngbDatepicker #datepicker="ngbDatepicker" />
+                </div>
             </div>
         </div>
         <div class="addObjective" (click)="openDialog()">

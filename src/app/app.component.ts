@@ -24,13 +24,9 @@ export class AppComponent {
 
   title = 'okr';
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService) { }
 
-  }
-
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void { }
 
   reloadObjectives(e: any): void {
     this.dataService.getObjectives(e.date, e.departmentId)
@@ -42,7 +38,6 @@ export class AppComponent {
   ngAfterViewInit(): void {
     this.backdropElm = this.backdrop.nativeElement as HTMLElement;
     this.modalElm = this.modal.nativeElement as HTMLElement;
-
   }
 
   closeDialog(): void {
@@ -57,15 +52,8 @@ export class AppComponent {
 
   createObjective(): void {
     var obj = Object.assign({}, this.newObjective);
-    this.dataService.addNewObjective(obj).subscribe(objectives => {
-      //this.objectives.next(objectives);
-    });
+    this.dataService.addNewObjective(obj).subscribe(objectives => { });
     this.closeDialog();
     this.newObjective = new Objective('', null, null, Privacy.Personal);
-
-    // this.dataService.getObjectives()
-    //   .subscribe(objectives => {
-    //     this.objectives = objectives;
-    //   });
   }
 }

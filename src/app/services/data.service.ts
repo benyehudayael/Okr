@@ -17,7 +17,6 @@ export class DataService {
         departmentId: departmentId
       }
     });
-
   }
   getPersons(): Observable<Person[]> {
     return this.http.get<Person[]>('https://localhost:7071/api/person');
@@ -25,7 +24,6 @@ export class DataService {
   addNewObjective(objective: Objective): Observable<any> {
     return this.http.post<any>('https://localhost:7071/api/objective', objective);
   }
-
   getDepartments(): Observable<Department[]> {
     return this.http.get<Department[]>('https://localhost:7071/api/department');
   }

@@ -9,10 +9,8 @@ import { Objective } from 'src/app/model/objective';
 export class ObjectiveItemComponent implements OnInit {
 
   @Input() objective!: Objective;
-  constructor() {
-  }
 
-  ngOnInit(): void {
-  }
+  constructor() { }
 
+  ngOnInit(): void { }
 }

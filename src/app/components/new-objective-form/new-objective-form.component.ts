@@ -92,5 +92,5 @@ export class NewObjectiveFormComponent implements OnInit {
 		this.privacyTitle = privacy;
 	}
 
-	privacies: string[] = Object.keys(Privacy).map(key => Privacy[key]).filter(value => typeof value === 'string')
+	privacies: string[] = Object.keys(Privacy).map(key => Privacy[key]).filter(value => typeof value === 'string');
 }

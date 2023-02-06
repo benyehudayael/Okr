@@ -51,7 +51,7 @@
           line-height: 21px;
           color: #003B60;
         }
-    }
+      }
       .col {
         height: 100%;
         .d-inline-block {
@@ -78,15 +78,15 @@
         font-size: 41px;
         color: $orange;
       }
-      p{
-         font-size: 14px;
-         margin: unset;
-         line-height: 16px;
-         position: absolute;
-         left: 1px;
-         color: #585961;
+      p {
+        font-size: 14px;
+        margin: unset;
+        line-height: 16px;
+        position: absolute;
+        left: 1px;
+        color: #585961;
       }
-       .btn:hover {
+      .btn:hover {
         background-color: transparent;
         border-color: transparent;
       }
@@ -105,13 +105,7 @@
       }
       .dropdown-toggle::after {
         display: none;
-    }
-      // div{
-      //     font-size: 24px;
-      //     display: flex;
-      //     align-items: center;
-      //     color: #003B60;
-      // }
+      }
     }
   }
   .addObjective{
