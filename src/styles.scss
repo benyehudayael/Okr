@@ -121,6 +121,10 @@ ngb-datepicker.dropdown-menu {
   background-color: $orange;
 }
 
+.dropdown-item:hover {
+  background-color: rgba(255, 182, 54, 0.25) !important;
+}
+
 *::-webkit-scrollbar { width: 12px;  height: 12px;}
 *::-webkit-scrollbar-track { background: #f6f6f6;}
 *::-webkit-scrollbar-thumb { background-color: $orange; border-radius: 20px; border: 3px solid #f6f6f6;}
