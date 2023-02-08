@@ -9,6 +9,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 `npm install`
 ### Start the development server
 `ng serve`
+
 Open a web browser and navigate to http://localhost:4200/ to see the application.
 #### Note: Make sure you have the latest version of Node.js and Angular CLI installed on your machine.
 
